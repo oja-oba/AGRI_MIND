@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <header>
+    <button class="hero-btn" id="langSwitcher">
+      <i class="fas fa-globe"></i> English
+    </button>
+  </header>
+
+  <div class="hero">
+    <div class="hero-text">
+      <h1 class="hero-h1" data-key="title">AgriMind</h1>
+      <p class="hero-p" data-key="tagline">The AI Crop Doctor for Low-Connectivity Farmers</p>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <button class="nav-item active" data-section="diagnose"><i class="fa-solid fa-camera"></i> <span data-key="diagnose">Diagnose</span></button>
+    <button class="nav-item" data-section="sms"><i class="fa-regular fa-message"></i> <span data-key="sms">SMS Support</span></button>
+    <button class="nav-item" data-section="weather"><i class="fa-solid fa-cloud"></i> <span data-key="weather">Weather</span></button>
+    <button class="nav-item" data-section="dashboard"><i class="fa-solid fa-chart-line"></i> <span data-key="dashboard">Dashboard</span></button>
+  </nav>
+
+  <main id="content">
+    <!-- Default Section (Diagnose) -->
+    <section class="container" id="diagnoseSection">
+      <h1 class="title" data-key="diagnoseTitle">Disease Diagnosis</h1>
+      <p class="subtitle" data-key="diagnoseSub">Upload or capture an image of the affected crop</p>
+
+      <div class="button-group">
+        <button class="btn take-photo" id="takePhotoBtn"><i class="fa-solid fa-camera"></i> <span data-key="takePhoto">Take Photo</span></button>
+        <button class="btn upload-image" id="uploadImageBtn"><i class="fa-solid fa-upload"></i> <span data-key="upload">Upload Image</span></button>
+      </div>
+
+      <input type="file" id="cameraInput" accept="image/*" capture="environment" style="display: none;">
+      <input type="file" id="fileInput" accept="image/*" style="display: none;">
+
+      <div id="previewContainer" class="preview-container" style="display: none;">
+        <h3 data-key="preview">Preview:</h3>
+        <img id="previewImage" alt="Selected crop image" />
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
