@@ -225,3 +225,82 @@ body {
     width: 100%;
   }
 }
+
+.dashboard .stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.dashboard .card {
+  background: #f6f5ef;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.dashboard .card h2 {
+  color: #178f3e;
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.chart-section, .activity-section {
+  margin-top: 25px;
+  text-align: left;
+}
+
+.chart-section h3, .activity-section h3 {
+  color: #178f3e;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.bar {
+  margin-bottom: 12px;
+}
+
+.bar span {
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.progress {
+  background: #eee;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.fill {
+  background: #178f3e;
+  height: 100%;
+}
+
+.activity-list {
+  list-style: none;
+  padding: 0;
+}
+
+.activity-list li {
+  background: #f6f5ef;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.activity-list .disease {
+  color: #e56c0a;
+  font-weight: 600;
+}
+
+.activity-list .time {
+  color: #777;
+  font-size: 13px;
+}

@@ -68,14 +68,32 @@ const translations = {
     smsContent: "Aika bayanin shuka ta SMS don taimakon AI.",
     weatherContent: "Duba hasashen yanayi don shirye-shiryen aikin gona.",
     dashboardContent: "Bayanan gonarka za su bayyana anan."
-  }
+  },
+    pg: {
+    title: "AgriMind",
+    tagline: "Di AI Crop Doctor wey sabi help farmers wey no get better internet",
+    diagnose: "Check Disease",
+    sms: "SMS Help",
+    weather: "Weather",
+    dashboard: "Dashboard",
+    diagnoseTitle: "Check Crop Disease",
+    diagnoseSub: "Upload or snap di leaf wey dey sick",
+    takePhoto: "Snap Picture",
+    upload: "Upload Picture",
+    preview: "Preview:",
+    smsContent: "Send message about di crop make AI help diagnose am.",
+    weatherContent: "Check weather forecast before you go farm.",
+    dashboardContent: "Your farm info go show here soon."
+  },
+
 };
 
 let currentLang = "en";
 
 // --- Language Switcher ---
 langSwitcher.addEventListener("click", () => {
-  const langs = ["en", "yo", "ig", "ha"];
+  const langs = ["en", "yo", "ig", "ha", "pg"];
+
   const nextIndex = (langs.indexOf(currentLang) + 1) % langs.length;
   currentLang = langs[nextIndex];
   langSwitcher.innerHTML = `<i class="fas fa-globe"></i> ${currentLang.toUpperCase()}`;
@@ -96,7 +114,30 @@ const sections = {
   diagnose: document.getElementById("diagnoseSection"),
   sms: `<section class="container"><h1 class="title" data-key="sms">SMS Support</h1><p data-key="smsContent">${translations[currentLang].smsContent}</p></section>`,
   weather: `<section class="container"><h1 class="title" data-key="weather">Weather</h1><p data-key="weatherContent">${translations[currentLang].weatherContent}</p></section>`,
-  dashboard: `<section class="container"><h1 class="title" data-key="dashboard">Dashboard</h1><p data-key="dashboardContent">${translations[currentLang].dashboardContent}</p></section>`
+ dashboard: `
+<section class="container dashboard">
+  <h1 class="title" data-key="dashboard">Dashboard</h1>
+
+  <div class="stats">
+    <div class="card"><h2 id="totalScans">0</h2><p>Total Scans</p></div>
+    <div class="card"><h2 id="activeFarmers">0</h2><p>Active Farmers</p></div>
+    <div class="card"><h2 id="diseasesDetected">0</h2><p>Diseases Detected</p></div>
+    <div class="card"><h2 id="successRate">0%</h2><p>Success Rate</p></div>
+  </div>
+
+  <div class="chart-section">
+    <h3>Most Common Diseases</h3>
+    <div id="commonDiseases" class="bars"></div>
+  </div>
+
+  <div class="activity-section">
+    <h3>Recent Activity</h3>
+    <ul id="recentActivity" class="activity-list"></ul>
+  </div>
+</section>`
+
+
+  
 };
 
 navItems.forEach(item => {
@@ -114,6 +155,52 @@ navItems.forEach(item => {
     }
   });
 });
+
+async function loadDashboardData() {
+  try {
+    const response = await fetch("/api/dashboard");
+    const data = await response.json();
+
+    // Stats
+    document.getElementById("totalScans").textContent = data.total_scans ?? 0;
+    document.getElementById("activeFarmers").textContent = data.active_farmers ?? 0;
+    document.getElementById("diseasesDetected").textContent = data.diseases_detected ?? 0;
+    document.getElementById("successRate").textContent = (data.success_rate ?? 0) + "%";
+
+    // Common diseases
+    const commonDiseases = document.getElementById("commonDiseases");
+    commonDiseases.innerHTML = "";
+    data.most_common?.forEach(d => {
+      const width = Math.min(d.cases * 2, 100);
+      commonDiseases.innerHTML += `
+        <div class="bar">
+          <span>${d.disease}</span>
+          <div class="progress"><div class="fill" style="width:${width}%;"></div></div>
+          <small>${d.cases} cases</small>
+        </div>`;
+    });
+
+    // Recent activity
+    const recent = document.getElementById("recentActivity");
+    recent.innerHTML = "";
+    data.recent?.forEach(r => {
+      const timeAgo = new Date(r.created_at).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
+      recent.innerHTML += `
+        <li>
+          <strong>${r.farmer_name}</strong> scanned ${r.crop} — 
+          <span class="disease">${r.disease}</span>
+          <span class="time">${timeAgo}</span>
+        </li>`;
+    });
+
+  } catch (err) {
+    console.error("Dashboard load error:", err);
+  }
+}
+
+// Load dashboard when user clicks Dashboard tab
+document.querySelector("[data-section='dashboard']").addEventListener("click", loadDashboardData);
+
 
 // --- Image Upload Logic ---
 const takePhotoBtn = document.getElementById("takePhotoBtn");
