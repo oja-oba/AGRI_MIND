@@ -304,3 +304,75 @@ body {
   color: #777;
   font-size: 13px;
 }
+
+/* Weather Card */
+.weather-card {
+  background: #f6f5ef;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 15px;
+  text-align: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+/* SMS Box */
+.sms-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.sms-box textarea {
+  width: 100%;
+  max-width: 500px;
+  height: 120px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 12px;
+  font-size: 15px;
+  resize: none;
+}
+
+.send-btn {
+  background-color: #178f3e;
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.send-btn:hover {
+  background-color: #0f6e2d;
+}
+/* Forecast Cards */
+.forecast-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.forecast-card {
+  background: #f6f5ef;
+  border-radius: 10px;
+  padding: 15px;
+  width: 140px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.forecast-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.forecast-card img {
+  width: 50px;
+  height: 50px;
+}
