@@ -1,1 +1,0 @@
-# AgriMind-The-AI-Crop-Doctor-
