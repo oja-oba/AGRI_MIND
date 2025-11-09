@@ -1,0 +1,74 @@
+{
+  "tomato_diseases": [
+    {
+      "disease": "Tomato_Bacterial_spot",
+      "solution": {
+        "homemade": "Mix 1 spoon of baking soda, a little vegetable oil, and a small drop of liquid soap in 4 liters of water. Spray every 5–7 days. Remove and burn infected leaves.",
+        "chemical": "Spray copper-based fungicides like Copper hydroxide or Copper oxychloride. Do not water plants from the top (avoid overhead watering)."
+      }
+    },
+    {
+      "disease": "Tomato_Early_blight",
+      "solution": {
+        "homemade": "Mix baking soda, vegetable oil, and a few drops of soap in water. Spray on leaves every week. You can also spray neem oil twice a week.",
+        "chemical": "Use fungicides like Chlorothalonil, Mancozeb, or Difenoconazole to control it."
+      }
+    },
+    {
+      "disease": "Tomato_Late_blight",
+      "solution": {
+        "homemade": "Mix one part milk with two parts water and spray every 3 days. Neem oil or garlic spray also helps stop the disease.",
+        "chemical": "Use fungicides like Metalaxyl, Chlorothalonil, or Mefenoxam. Remove and destroy infected plants quickly."
+      }
+    },
+    {
+      "disease": "Tomato_Leaf_Mold",
+      "solution": {
+        "homemade": "Mix 1 spoon baking soda and a little liquid soap in 4 liters of water. Spray once a week. Keep your farm airy and not too wet.",
+        "chemical": "Spray Chlorothalonil, Copper fungicide, or Azoxystrobin. Clean your greenhouse and don’t plant too close together."
+      }
+    },
+    {
+      "disease": "Tomato_Septoria_leaf_spot",
+      "solution": {
+        "homemade": "Crush 10 garlic cloves, soak in 1 liter of water overnight, and spray the next day. Neem oil also helps prevent it.",
+        "chemical": "Use Mancozeb, Chlorothalonil, or Copper hydroxide fungicide. Remove bad leaves and spray weekly."
+      }
+    },
+    {
+      "disease": "Tomato_Spider_mites_Two_spotted_spider_mite",
+      "solution": {
+        "homemade": "Mix 2 spoons of mild soap in 1 liter of water and spray under the leaves. You can also use neem oil every 3–5 days.",
+        "chemical": "Use Abamectin, Spiromesifen, or Bifenthrin to kill mites. Change the chemical after some time to stop resistance."
+      }
+    },
+    {
+      "disease": "Tomato_Target_Spot",
+      "solution": {
+        "homemade": "Mix 1 spoon baking soda and 2 spoons neem oil in 4 liters of water. Spray and cut off lower leaves to allow air to pass.",
+        "chemical": "Use Mancozeb, Azoxystrobin, or Chlorothalonil every 7–10 days."
+      }
+    },
+    {
+      "disease": "Tomato_Tomato_YellowLeaf_Curl_Virus",
+      "solution": {
+        "homemade": "Use neem oil, garlic spray, or yellow sticky traps to control whiteflies that spread this virus. Remove and destroy sick plants.",
+        "chemical": "Spray insecticides like Imidacloprid, Acetamiprid, or Thiamethoxam to kill whiteflies. Plant tomato types that can resist this virus."
+      }
+    },
+    {
+      "disease": "Tomato_Tomato_mosaic_virus",
+      "solution": {
+        "homemade": "Mix equal parts milk and water and spray on the leaves. Clean your tools with bleach water (1 part bleach to 9 parts water).",
+        "chemical": "There is no chemical cure. Use virus-free seeds and resistant tomato varieties. Always clean tools and soil."
+      }
+    },
+    {
+      "disease": "Tomato_healthy",
+      "solution": {
+        "homemade": "Spray neem oil every week to stop insects. Mix 1 spoon baking soda in 1 liter of water to stop fungus. Use compost tea to make plants strong.",
+        "chemical": "Use balanced fertilizer (10-10-10) or calcium nitrate to make fruits strong. Spray preventive fungicides or insecticides in the rainy season."
+      }
+    }
+  ]
+}
