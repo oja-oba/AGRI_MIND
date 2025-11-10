@@ -176,9 +176,9 @@ Opening this endpoint wakes the backend and loads the ML model.
 
 1. **Wake the server** (see link above).  
 2. Open WhatsApp and add **+1 (415) 523-8886** as a contact
-3. send:
+3. Open the contact to chat and send(This add you to the sandbox):
 ```
-    'join fall-laid' to the contact in a chat to join the sandbox
+    join fall-laid
 ```
 4. Send a Tomato leaf image to the chat(Choose a random Tomato leaf picture from the data folder) 
 5. Receive the prediction in the chat.
